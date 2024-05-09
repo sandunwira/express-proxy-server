@@ -1,7 +1,13 @@
 const express = require('express');
+const cors = require('cors');
 const { createProxyMiddleware } = require('http-proxy-middleware');
 
 const app = express();
+
+// Use cors middleware and allow all origins
+app.use(cors());
+
+// Rest of your code...
 
 app.use('/', (req, res, next) => {
   // Extract the target from the request path and decode it
